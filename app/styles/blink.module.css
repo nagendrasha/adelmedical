@@ -1,0 +1,13 @@
+.blink {
+  /* width: 50%; */
+  animation: blinker 15s infinite;
+}
+
+@keyframes blinker {
+  0%, 100% {
+    width: 0%;
+  }
+  50% {
+    width: 10%;
+  }
+}

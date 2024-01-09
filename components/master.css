@@ -1,0 +1,17 @@
+
+.removescroll::-webkit-scrollbar {
+    display: none;
+  }
+  
+
+  .activeCard{
+    transform: scale(1);
+    transition:transform 300ms;
+    opacity: 1;
+  }
+  
+  .nonActive{
+    transform: scale(0.8);
+    transition:transform 300ms;
+    opacity: 0.7;
+  }
