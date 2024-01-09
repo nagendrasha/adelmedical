@@ -1,4 +1,4 @@
-// File: /home/kapil/Desktop/adel social projects/adelsocial/app/login/page.js
+// File: /Users/air/Documents/mern/adelmedical/app/login/page.js
 import * as entry from '../../../../app/login/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
