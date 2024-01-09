@@ -1,22 +1,11 @@
 {
   "/_not-found": "app/_not-found.js",
-  "/page": "app/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/page": "app/page.js",
   "/buynow/page": "app/buynow/page.js",
-  "/home/page": "app/home/page.js",
   "/login/page": "app/login/page.js",
-  "/menupage/page": "app/menupage/page.js",
-  "/myorders/page": "app/myorders/page.js",
   "/newhome/page": "app/newhome/page.js",
   "/orderplaced/page": "app/orderplaced/page.js",
-  "/pastorder/page": "app/pastorder/page.js",
-  "/profile/page": "app/profile/page.js",
   "/signup/page": "app/signup/page.js",
-  "/userlogin/page": "app/userlogin/page.js",
-  "/userregister/page": "app/userregister/page.js",
-  "/billing/[...data]/page": "app/billing/[...data]/page.js",
-  "/checkout/[UID]/page": "app/checkout/[UID]/page.js",
-  "/menu/[mid]/page": "app/menu/[mid]/page.js",
-  "/orderplaced/[id]/page": "app/orderplaced/[id]/page.js",
-  "/useraddress/[UID]/page": "app/useraddress/[UID]/page.js"
+  "/orderplaced/[id]/page": "app/orderplaced/[id]/page.js"
 }

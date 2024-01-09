@@ -1,27 +1,18 @@
 'use client'
-
-import StarIcon from '@mui/icons-material/Star'
-import StopCircleOutlinedIcon from '@mui/icons-material/StopCircleOutlined'
-import { Badge, Box, Button, Container, Divider, Grid, Icon, IconButton, Paper, Skeleton, Typography } from '@mui/material'
+import Footer from '@/components/Footer'
+import MainHeader from '@/components/MainHeader'
+import RestroCard from '@/components/RestroCard'
+import RestroSkeletonCard from '@/components/RestroCardSkeleton'
+import { Box, Container, Divider, Grid, Typography } from '@mui/material'
 import axios from 'axios'
-import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
-import hero1 from '../../assests/hero3.jpg'
-import hero2 from '../../assests/b2.jpg'
-import hero3 from '../../assests/b3.jpg'
-import hero4 from '../../assests/b5.jpg'
-import blink from '../styles/blink.module.css'
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import MainHeader from '@/components/MainHeader'
-import dotBack from '../../assests/dot.png'
-import rightback from '../../assests/rightback.webp'
-import RestroCard from '@/components/RestroCard'
-import RestroSkeletonCard from '@/components/RestroCardSkeleton'
-import Footer from '@/components/Footer'
-import med1 from '../../med/WhatsApp Image 2024-01-05 at 13.14.26.jpeg';
+import medb1 from '../../assests/1.png'
+import medb2 from '../../assests/2.png'
+import banner from '../../assests/banner.png'
+import med1 from '../../med/WhatsApp Image 2024-01-05 at 13.14.26.jpeg'
 import med2 from '../../med/WhatsApp Image 2024-01-05 at 13.14.27 (1).jpeg'
 import med3 from '../../med/WhatsApp Image 2024-01-05 at 13.14.27.jpeg'
 import med4 from '../../med/WhatsApp Image 2024-01-05 at 13.14.30.jpeg'
@@ -37,20 +28,11 @@ import med13 from '../../med/WhatsApp Image 2024-01-05 at 13.14.37 (1).jpeg'
 import med14 from '../../med/WhatsApp Image 2024-01-05 at 13.14.37.jpeg'
 import med15 from '../../med/WhatsApp Image 2024-01-05 at 13.14.38 (1).jpeg'
 import med16 from '../../med/WhatsApp Image 2024-01-05 at 13.14.39 (1).jpeg'
-import medb1 from '../../assests/1.png'
-import medb2 from '../../assests/2.png'
-
-
-import banner from '../../assests/banner.png'
 
 
 const NewHome = () => {
     const router = useRouter();
     const [shopData, setShopData] = useState([]);
-    const [popularShop, setPopularShop] = useState([]);
-    const [nonPopularShop, setNonPopularShop] = useState([]);
-    const [activeOrder, setActiveOrder] = useState([]);
-    const [shopControl, setShopControl] = useState({ noData: false, noInternet: false, loader: true });
     const [sideDraw,setSideDraw]=useState({
         open:false,
         data:{}
@@ -79,41 +61,6 @@ const NewHome = () => {
 
     console.log("shopData",shopData)
 
-    const fetchApi = async () => {
-        try {
-            const fetchedData = await axios.get('/api/shop');
-            if (fetchedData.data.message == 'All Data Fetched'){
-                setShopData(fetchedData.data.resp);
-                const popular = fetchedData.data.resp.filter((ele) => { return ele.isPopular == true });
-                const nonPopular = fetchedData.data.resp.filter((ele) => { return ele.isPopular == false });
-                setNonPopularShop(popular);
-                setPopularShop(nonPopular);
-                setCardsControl({ noData: false, noInternet: false, loader: false });
-            }
-            if(fetchedData.data.message == 'No Data Found'){
-                setCardsControl({ noData: true, noInternet: false, loader: false });
-            }
-        }catch(err){console.log(err)}
-    };
-
-    const fetchActiveOrder = async () => {
-        try {
-            const uid = JSON.parse(localStorage.getItem('UID')); const respData = await axios.get(`/api/billing/${uid}`)
-            if (respData.data.message == 'Successfull') { setActiveOrder(respData.data.resp) }
-        }
-        catch (err) {
-            console.log(err.message)
-        }
-    }
-
-
-    const handleNavigateMenuPage = id => router.push(`/menu/${id}`);
-
-
-    useEffect(() => {
-        if (localStorage.getItem('UID')) { fetchActiveOrder() };
-        fetchApi();
-    }, [])
 
     return (
         <>
@@ -143,7 +90,7 @@ const NewHome = () => {
                         </Grid>
                     </Grid> */}
                     
-                            <Grid container sx={{ justifyContent: "center",height:"864px",width:"1728px",backgroundImage:`url(${banner.src})`,backgroundRepeat:"no-repeat",backgroundSize:"100% 100%", alignItems: "center" }} wrap='wrap-reverse'>
+                            <Grid container sx={{ justifyContent: "center",height:{lg:"750px",md:"550px",sm:"400px",xs:"250px"},width:"1728px",backgroundImage:`url(${banner.src})`,backgroundRepeat:"no-repeat",backgroundSize:"100% 100%", alignItems: "center" }} wrap='wrap-reverse'>
                                 
                             </Grid>
                     {/* popular items */}
@@ -180,10 +127,10 @@ const NewHome = () => {
                         </Grid>
                     }
             
-                    <Grid container justifyContent={'center'} sx={{ height: "650px", bgcolor: "#002D43" }}>
+                    <Grid container justifyContent={'center'} sx={{ bgcolor: "#002D43",p:"10px" }}>
 
                         <Grid container justifyContent={'center'}>
-                            <Grid item xs={6} sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                            <Grid item xs={12} sm={12} md={6} lg={6} sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
                                 <Box sx={{ height: "fit-content" }}>
                                     <Typography align='center' variant='h4' sx={{ color: "white", fontWeight: "bold" }}>Online<span style={{ color: "#00c853" }}> Medicine Delivery </span>App</Typography>
                                     <Typography align='center' variant='h6' sx={{ color: "white", mt: "10px", fontSize: "14px" }}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Typography>
@@ -191,7 +138,7 @@ const NewHome = () => {
                             </Grid>
                         </Grid>
 
-                        <Grid item xs={8} sx={{}}>
+                        <Grid item xs={11.5} sm={8} md={8} lg={8} sx={{mt:"20px"}}>
                             <Box sx={{ mb: "40px", width: "100%", borderRadius: "20px", overflow: "hidden" }}>
                                 <Slide {...properties} >
                                     {

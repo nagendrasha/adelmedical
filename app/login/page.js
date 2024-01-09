@@ -16,7 +16,7 @@ const LoginPage = () => {
     }
 
     const registerHandler=()=>{
-        router.push('/register')
+        router.push('/signup')
     };
     console.log(loginData)
     return (

@@ -90,7 +90,7 @@ const QuickViewDrawer = ({sideDraw,setSideDraw }) => {
 
               
                    <Grid item xs={12} sx={{ display:"flex",justifyContent:"center",alignItems:"center", height: {lg:'350px', md:'350px', sm:'340px', xs:'320px'}}} >
-                      <Image src={product1} style={{height:"100%",width:"60%"}}/>
+                      <Image src={product1} style={{height:"100%",width:"70%"}}/>
                     </Grid>
 
                 {/* } */}

@@ -1,14 +1,10 @@
 'use client'
-import { Box, Button, FormControl, FormControlLabel, FormGroup, Grid, InputLabel, MenuItem, OutlinedInput, Radio, RadioGroup, Select, Step, StepLabel, Stepper, TextField, TextareaAutosize, Typography } from '@mui/material';
-import React, { useState } from 'react';
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
-import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
-import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
-import { useTheme } from '@mui/material/styles';
-import Checkbox from '@mui/material/Checkbox';
-import { useRouter } from 'next/navigation';
 import Footer from '@/components/Footer';
 import MainHeader from '@/components/MainHeader';
+import { Button, FormControl, FormControlLabel, Grid, MenuItem, OutlinedInput, Radio, RadioGroup, Select, TextField, Typography } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 
 

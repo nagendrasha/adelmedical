@@ -1,0 +1,11 @@
+{
+  "/_not-found": "/_not-found",
+  "/favicon.ico/route": "/favicon.ico",
+  "/page": "/",
+  "/buynow/page": "/buynow",
+  "/login/page": "/login",
+  "/newhome/page": "/newhome",
+  "/orderplaced/page": "/orderplaced",
+  "/signup/page": "/signup",
+  "/orderplaced/[id]/page": "/orderplaced/[id]"
+}
